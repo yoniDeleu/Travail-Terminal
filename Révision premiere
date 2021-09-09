@@ -1,0 +1,17 @@
+liste=[2,5,7,9,4]
+"""
+def recherche1(liste ,valeur):
+    
+   for something in liste:
+        if something == valeur:
+           return True
+   return False
+print(recherche1(liste , 4))
+
+def recherche2(liste ,valeur):
+    for i in range(len(liste)):
+        if i==valeur:
+            return True
+   return False
+print(recherche2(liste,3))
+"""
