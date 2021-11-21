@@ -34,8 +34,7 @@ def nbr_de_chiffre(x):
     if x < 10:
         return 1
     else:
-        return nbr_de_chiffre(x//10) + 1
-
+        return nbr_de_chiffre(x//10)+ 1
 print(nbr_de_chiffre(34639))
 """
 #Exercice 8
@@ -43,11 +42,8 @@ print(nbr_de_chiffre(34639))
 def appartient (liste,mot,i):
     if liste[i] == mot:
         return True
-    elif i == len(liste) -1
+    elif i == len(liste)-1:
         return False
     else:
         appartient(liste,mot,i+1)
 """
-#Exercice 9
-def est_palindrome(sofiane):
-    
