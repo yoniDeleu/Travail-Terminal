@@ -1,3 +1,4 @@
+#Exercice 3
 """
 import random
 class Personnage:
@@ -35,6 +36,7 @@ def game(combattant1, combattant2):
         msg = "Les deux combattants sont morts en même temps"
     return msg
 print(game(aragorn, orc))
+"""
 """
 import random
 class Personnage:
@@ -79,3 +81,37 @@ def game(combattant1, combattant2):
         msg = "Les deux combattants sont morts en même temps"
     return msg
 print(game(aragorn, orc))
+"""
+"""
+#Exerice 2.2
+from math import sqrt
+class Triangle_rectangle:
+    def __init__(self, cote1,cote2):
+        self.cote1 = cote1
+        self.cote2 = cote2
+        self.hypothenuse = sqrt(self.cote1**2 + self.cote2**2)
+        
+    def get_cote1(self):
+        return self.cote1
+    
+    def get_cote2(self):
+        return self.cote2
+    
+    def get_hypothenuse(self):
+        return self.hypothenuse
+    
+    def set_cote1(self,nbr):
+        self.cote1 = nbr
+        self.hypothenuse = sqrt(self.cote1**2 + self.cote2**2)
+        
+    def set_cote2(self,nbr):
+        self.cote2 = nbr
+        self.hypothenuse = sqrt(self.cote1**2 + self.cote2**2)
+        
+triangle = Triangle_rectangle(5,5)
+print(triangle.cote1)
+print(triangle.cote2)
+print(triangle.hypothenuse)
+"""
+#Exercice 4
+class Point 
