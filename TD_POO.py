@@ -6,17 +6,23 @@ class Personnage:
         self.nom = nom
 
     def perd_vie(self):
+        coup_critique = random.random()
         if random.random() < 0.5:
             nbPoint = 1
+            if coup_critique > 0,95
+            nbPoint = nbPoint * 5
         else:
             nbPoint = 2
+            if coup_critique > 0,95
+            nbPoint = nbPoint * 5
         self.vie = self.vie - nbPoint
         return nbPoint
+
         
-bilbo = Personnage("Bilbo", 20)
+Bogoreh = Personnage("Bogoreh", 20)
 gollum = Personnage("Gollum", 20)
 frodon = Personnage("Frodon", 20)
-araignee = Personnage("Araignée", 10)
+araignee = Personnage("Araignee", 10)
 aragorn = Personnage("Aragorn", 10)
 orc = Personnage("Orc", 10)
     
