@@ -112,6 +112,50 @@ triangle = Triangle_rectangle(5,5)
 print(triangle.cote1)
 print(triangle.cote2)
 print(triangle.hypothenuse)
-"""
+
 #Exercice 4
-class Point 
+import math
+class Point:
+    def __init__(self,x,y):
+        self.coor_abs = x
+        self.coor_ord = y
+        
+    def __repr__(self):
+        return "(" +str(self.coor_abs)+ "," +str(self.coor_ord)+ ")"
+ 
+A=Point(-2, 5)
+"""
+class Fraction:
+    def __init__(self, num, denom):
+        self.num = num
+        self.denom = denom
+    
+    def __repr__(self):
+        if self.denom == 1:
+            return str(slef.num)
+        else:
+            return str(self.num) + "/" + str(self.denom)
+
+    def __eq__(self, frac2):
+        if self.num / self.denom == frac2.num / frac2.denom:
+            return True
+        else:
+            return False
+        
+    def __lt__(self, frac2):
+        if self.num / self.denom < frac2.num / frac2.denom:
+            return True
+        else:
+            return False
+        
+    def __add__(self, frac):
+        if self.num==self.denom:
+            return (self.num + frac2.num) / self.denom
+        else:
+            return (self.num * frac2.denom
+    
+    
+    
+    
+    
+A=Fraction(12, 35)
