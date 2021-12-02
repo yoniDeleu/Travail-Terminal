@@ -1,37 +1,38 @@
+"""
 def creer_pile():
-    """ Créé une pile vide
+     Créé une pile vide
     :return: Une pile vide représentée par la liste vide
-    """
+    
     return []
 
 
 def est_vide(p):
-    """ Teste si une pile est vide
+     Teste si une pile est vide
     :param p: Une pile
     :return: True si p est vide, False sinon
-    """
+    
     return p == []
 
 
 def empiler(p, e):
-    """ Empile un élément au sommet d'une pile
+     Empile un élément au sommet d'une pile
     :param p: Une pile
     :param e: Un élément
     :return: None
     :Effets: Empile e au sommet de p
-    """
+    
     p.append(e)
     
 
 def depiler(p):
-    """ Dépile un élément au sommet d'une pile et le renvoie
+     Dépile un élément au sommet d'une pile et le renvoie
     :param p: Une pile
     :return: L'élément au sommet de la pile
     :Précondition: p est non vide
-    """
+    
     assert not est_vide(p), "Impossible de dépiler une pile vide"
     return p.pop()
-"""
+
 #Exercice 1
 def pile_alternee(n):
     p =creer_pile ()
@@ -65,7 +66,7 @@ def sommet_pile(p):
         return save
 print(p)
 """
-
+"""
 #Exercice 3
 def est_bien_parenthesee (n):
     p = creer_pile ()
@@ -78,8 +79,18 @@ def est_bien_parenthesee (n):
             else:
                 return False
     return est_vide(p)
-print(est_bien_parenthesee("((())())"))
-print(est_bien_parenthesee("((())"))
-print(est_bien_parenthesee("())("))
-                
+print(est_bien_parenthesee('((())())'))
+print(est_bien_parenthesee('((())'))
+print(est_bien_parenthesee('())('))
+"""
+
+class Pile:
+    def __init__(self,taille_max):
+        self.taille_max = taille_max
+        self.taille = 0
+        self.contenu = taille_max*[None]
+    def est_vide():
+        if taille_max == 0:
+            return True
+    def empiler(,)
     
