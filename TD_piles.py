@@ -4,16 +4,12 @@ def creer_pile():
     :return: Une pile vide représentée par la liste vide
     
     return []
-
-
 def est_vide(p):
      Teste si une pile est vide
     :param p: Une pile
     :return: True si p est vide, False sinon
     
     return p == []
-
-
 def empiler(p, e):
      Empile un élément au sommet d'une pile
     :param p: Une pile
@@ -23,7 +19,6 @@ def empiler(p, e):
     
     p.append(e)
     
-
 def depiler(p):
      Dépile un élément au sommet d'une pile et le renvoie
     :param p: Une pile
@@ -32,7 +27,6 @@ def depiler(p):
     
     assert not est_vide(p), "Impossible de dépiler une pile vide"
     return p.pop()
-
 #Exercice 1
 def pile_alternee(n):
     p =creer_pile ()
@@ -43,7 +37,6 @@ def pile_alternee(n):
             empiler(p, -i)
     return p
 print(pile_alternee(7))
-
 #Exercice 2
 def vider_pile(n):
     while not est_vide (p):
@@ -53,10 +46,8 @@ empiler(p, 2)
 empiler(p, 6)
 empiler(p, 8)
 print(p)
-
 vider_pile(p)
 print (p)
-
 def sommet_pile(p):
     if est_vide(p):
         return None
@@ -83,14 +74,18 @@ print(est_bien_parenthesee('((())())'))
 print(est_bien_parenthesee('((())'))
 print(est_bien_parenthesee('())('))
 """
+#Exercice 7 P1
+def est_balise_fermante(html):
+    dernier_element = len(html)-1
+    y=html[dernier_element]
+    if html[0] == "<" and html[1] == "/" and y == ">":
+        return True
+    else:
+        return False
+print(est_balise_fermante("</p>"))
 
-class Pile:
-    def __init__(self,taille_max):
-        self.taille_max = taille_max
-        self.taille = 0
-        self.contenu = taille_max*[None]
-    def est_vide():
-        if taille_max == 0:
-            return True
-    def empiler(,)
-    
+def est_paire_balises(prem, deux):
+    return prem[1 : len(prem)-2] == deux[2 : len(deux)-2]
+
+#P2
+
