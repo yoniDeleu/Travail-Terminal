@@ -25,3 +25,10 @@ class File:
             s = s + str(self.data[i]) + "|"
         return s
     
+#def taille(file):
+#    F = file()
+#    while not F.est_vide():
+#        for i in range(len(self.data)):
+#            s = s + str(self.data[i])
+#        return s
+#    return file
