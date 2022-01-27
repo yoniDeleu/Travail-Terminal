@@ -1,4 +1,5 @@
 from file import *
+from pile import *
 """
 #Exo 2
 def inverse(file):
@@ -19,12 +20,14 @@ def separe (f):
         else:
             impaire.enfile(x)
     return paire, impaire
-"""
+
 #Exo 5
-def retire_dernier(file):
-    file_rep = File()
-    file.defile()
-    while not file.est_vide():
-        if file.long > 1:
-            file_rep.enfile(file.defile())
-    return(file_rep)
+def supr(f):
+    t=f.taille()
+    f2=File()
+    for i in range (t-1):
+        f2.enfile(f.defile())
+    return f2
+"""
+
+#Exo 6
