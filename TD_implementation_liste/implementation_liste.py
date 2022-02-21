@@ -2,12 +2,12 @@ from visualisation_arbre import *
 from random import randint
 
 # PARTIE 1 - TRAVAIL PRELIMINAIRE Question 2
-arbre_du_cours = [2, [8, [6, [], []], [9, [], []]], [1, [7, [], []], []]]
-show(arbre_du_cours,"arbre")
+arbre = [2, [8, [6, [], []], [9, [], []]], [1, [7, [], []], []]]
+print(show(arbre,"arbre_du_cours.png"))
 
 # PARTIE 1 - TRAVAIL PRELIMINAIRE Question 3
-arbre_feuille = [1,[],[]]
-show(arbre_feuille,"feuille")
+arbre = [1,[],[]]
+show(arbre)
 
 # # PARTIE 2 - CODE ET TESTS A ECRIRE
 
@@ -21,6 +21,7 @@ def est_vide(arbre):
     
     TESTS :
     >>> 
+    Résultat souhaité
     
     >>> #Deuxième appel de fonction 
     Résultat souhaité
@@ -30,8 +31,6 @@ def est_vide(arbre):
     '''
     if arbre[0] == []:
         return True
-    else:
-        return False
 
 def est_feuille(arbre):
     '''
@@ -42,10 +41,7 @@ def est_feuille(arbre):
     
     TESTS :
     '''
-    if arbre == [1,[],[]]:
-        return True
-    else:
-        return False
+    # A compléter
 
 def racine(arbre):
     '''
