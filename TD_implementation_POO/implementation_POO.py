@@ -1,4 +1,4 @@
-from visualisation_arbre_PO import *
+from visualisation_arbre_POO import *
 from random import randint
 
 # IMPLEMENTATION DE LA CLASSE NOEUD
@@ -22,17 +22,20 @@ class Arbre:
         return (bool) : True si l'arbre est vide, False sinon
         
         TESTS :
-        >>> #Premier appel de fonction
-        Résultat souhaité
+        >>> arbre_du_cours.est_vide()
+        False
         
-        >>> #Deuxième appel de fonction 
-        Résultat souhaité
+        >>> arbre_feuille.est_vide()
+        False
         
-        >>> #Troisième appel de fonction 
-        Résultat souhaité
+        >>> arbre_vide.est_vide()
+        True
         '''
-        #A compléter
-
+        if self.racine is None:
+            return True
+        else:
+            return False
+        
     def est_feuille(self):
         '''
         DOCUMENTATION :
@@ -40,9 +43,19 @@ class Arbre:
         return (bool) : True si l'arbre est une feuille, False sinon
         
         TESTS :
-        '''
-        #A compléter
-
+        >>> arbre_du_cours.est_feuille()
+        False
+        
+        >>> arbre_feuille.est_feuille()
+        True
+        
+        >>> arbre_vide.est_feuille()
+        False
+        ''' 
+        if self.racine == noeud:
+            return True
+        else:
+            return False
 
     def valeur_racine(self):
         '''
@@ -151,24 +164,31 @@ def cree_peigne_droit(h, maxi):
 if __name__ == '__main__':
     # Lancement des tests (laisser ces deux lignes de code inchangées)
     import doctest
-    doctest.testmod(optionflags=doctest.NORMALIZE_WHITESPACE | doctest.ELLIPSIS, verbose=False)
 
-# PARTIE 1 - TRAVAIL PRELIMINAIRE Question 2
-    # A compléter
+    # PARTIE 1 - TRAVAIL PRELIMINAIRE Question 2
+    noeud = Noeud(2, Noeud(8, Noeud(6, None, None), Noeud(9, None, None)), Noeud(1, Noeud(7, None, None), None))
+    arbre_du_cours = Arbre(noeud)
+    #show(arbre_du_cours, "arbre_du_cours")
 
-# PARTIE 1 - TRAVAIL PRELIMINAIRE Question 3
-    # A compléter
- 
-# PARTIE 2 - Question 3
+    # PARTIE 1 - TRAVAIL PRELIMINAIRE Question 3
+    noeud = Noeud(1,None,None)
+    arbre_feuille = Arbre(noeud)
+    #show(arbre_feuille, "arbre_feuille")
+
+    arbre_vide = Arbre()
+    #show(arbre_vide,"arbre_vide")
+     
+    # PARTIE 2 - Question 3
+            
+        # Creation d'un arbre complet de hauteur 3
+            # A compléter
         
-    # Creation d'un arbre complet de hauteur 3
-        # A compléter
-    
-    # Creation d'un peigne gauche de hauteur 3
-        # A compléter
-    
-    # Creation d'un peigne droit de hauteur 3
-        # A compléter
+        # Creation d'un peigne gauche de hauteur 3
+            # A compléter
+        
+        # Creation d'un peigne droit de hauteur 3
+            # A compléter
 
-# PARTIE 2 - Question 4
-    # A compléter
+    # PARTIE 2 - Question 4
+        # A compléter
+    doctest.testmod(optionflags=doctest.NORMALIZE_WHITESPACE | doctest.ELLIPSIS, verbose=False)
