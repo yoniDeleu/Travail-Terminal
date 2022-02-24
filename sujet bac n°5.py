@@ -1,16 +1,13 @@
 def RechercheMinMax(tab):
-    mini = 0
-    maxi = 0
-    dico = {"min" : None ,"max": None}
-    if tab == []:
-        return dico
-    dico["min"] = int(tab[0])
-    for v in tab:
-        if v > maxi:
-            maxi = v
-        if v < mini:
-            mini = v
-    return {"min" : mini ,"max": maxi}
+    if len(tab) == 0:
+        return {'min': None, 'max': None}
+    min, max = tab[0], tab[0]
+    for i in tab:
+        if i < min:
+            min = i
+        if i > max:
+            max = i
+    return {'min': min, 'max': max}
 
 
 class Carte:
