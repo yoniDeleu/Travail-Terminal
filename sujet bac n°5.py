@@ -45,7 +45,7 @@ class PaquetDeCarte:
     def remplir(self):
         for c in range(1,5):
            for v in range(1,14):
-                self.contenu.append(Carte(c,v)
+                self.contenu.append(Carte(c,v))
 
     def getCarteAt(self, pos):
         assert pos < 52, 'erreur de position'
