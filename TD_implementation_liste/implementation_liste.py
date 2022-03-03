@@ -2,16 +2,16 @@ from visualisation_arbre import *
 from random import randint
 
 # PARTIE 1 - TRAVAIL PRELIMINAIRE Question 2
-arbre = [2, [8, [6, [], []], [9, [], []]], [1, [7, [], []], []]]
-print(show(arbre,"arbre_du_cours.png"))
+arbre_du_cours = [2, [8, [6, [], []], [9, [], []]],  [1, [7, [], []], []]]
+show(arbre_du_cours,"arbre_du_cours")
 
 # PARTIE 1 - TRAVAIL PRELIMINAIRE Question 3
-arbre = [1,[],[]]
-show(arbre)
+arbre_feuille = [1,[],[]]
+show(arbre_feuille,"arbre_feuille")
 
 # # PARTIE 2 - CODE ET TESTS A ECRIRE
-
-
+arbre_vide = []
+show(arbre_vide,"arbre_vide")
 def est_vide(arbre):
     '''
     DOCUMENTATION :
@@ -20,17 +20,17 @@ def est_vide(arbre):
     return (bool) : True si l'arbre est vide, False sinon
     
     TESTS :
-    >>> 
-    Résultat souhaité
-    
-    >>> #Deuxième appel de fonction 
-    Résultat souhaité
-    
-    >>> #Troisième appel de fonction 
-    Résultat souhaité
+    >>> est_vide(arbre_vide)
+        True
+    >>> est_vide(arbre_du_cours)
+        False
+    >>> est_vide(arbre_feuille)
+        False
     '''
-    if arbre[0] == []:
+    if arbre == []:
         return True
+    else:
+        return False
 
 def est_feuille(arbre):
     '''
@@ -40,8 +40,19 @@ def est_feuille(arbre):
     return (bool) : True si l'arbre est une feuille, False sinon
     
     TESTS :
-    '''
-    # A compléter
+    >>> est_feuille(arbre_vide)
+        False
+    >>> est_feuille(arbre_du_cours)
+        False
+    >>> est_feuille(arbre_feuille)
+        True
+      '''
+    if est_vide(arbre):
+        return False
+    elif arbre[1] == [] and arbre[2] == []:
+        return True 
+    else:
+        return False
 
 def racine(arbre):
     '''
@@ -49,12 +60,18 @@ def racine(arbre):
     Description de la fontion : Renvoie la valeur du noeud racine
     arbre (list) : Arbre implémenté sous forme de listes imbriquées
     return (int, str, etc...) : Valeur du noeud racine
-    précondition : A compléter
+    précondition : l'arbre soit non vide
     
     TESTS :
+    >>> racine(arbre_du_cours)
+        2
+    >>> racine(arbre_feuille)
+        1
+    
     '''
     # Vérification de la précondition (voir énoncé : remarques importantes sur le travail)
-    assert ..., " " # A compléter
+    assert not est_vide(arbre), "l'arbre est vide"
+    return arbre [0]
     # Code de la fonction à compléter
 
 def SAG(arbre):
@@ -63,12 +80,17 @@ def SAG(arbre):
     Description de la fontion : Renvoie le sous-arbre gauche de l'arbre
     arbre (list) : Arbre implémenté sous forme de listes imbriquées
     return (list) : sous-arbre gauche
-    précondition : A compléter
+    précondition : le SAG contient des élements
     
     TESTS :
+    >>> SAG(arbre_du_cours)
+        [8, [6, [], []], [9, [], []]]
+    >>> SAG(arbre_du_cours)
+        None
     '''
     # Vérification de la précondition (voir énoncé : remarques importantes sur le travail)
-    assert ..., " " # A compléter
+    assert not est_vide(arbre[1]), "le SAG ne doit pas etre vide"
+    return arbre[1]
     # Code de la fonction à compléter
 
 def SAD(arbre):
@@ -77,12 +99,17 @@ def SAD(arbre):
     Description de la fontion : Renvoie le sous-arbre droit de l'arbre
     arbre (list) : Arbre implémenté sous forme de listes imbriquées
     return (list) : sous-arbre droit
-    précondition : A compléter
+    précondition : le SAD contient des élements
     
     TESTS :
+    >>> SAD(arbre_du_cours)
+        [1, [7, [], []], []]
+    >>> SAD(arbre_du_cours)
+        None
     '''
     # Vérification de la précondition (voir énoncé : remarques importantes sur le travail) 
-    assert ..., " " # A compléter
+    assert not est_vide(arbre[2]), "le SAD ne doit pas etre vide"
+    return arbre[2]
     # Code de la fonction à compléter
 
 def taille(arbre):
@@ -93,8 +120,18 @@ def taille(arbre):
     return (int) : Taille de l'arbre
     
     TESTS :
+    >>> est_feuille(arbre_vide)
+        0
+    >>> est_feuille(arbre_du_cours)
+        6
+    >>> est_feuille(arbre_feuille)
+        1
     '''
-    # A compléter
+    if not est_vide(arbre):
+        return 0
+    else:
+        return 1 + taille(SAG) + taille(SAD)
+
 
 def hauteur(arbre):
     '''
