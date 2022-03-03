@@ -66,9 +66,14 @@ class Arbre:
         
         TESTS :
         '''
-        # Vérification de la précondition (voir énoncé : remarques importantes sur le travail)
-        assert ..., " " # A compléter
-        # Code de la fonction à compléter
+        >>> valeur_racine(arbre_du_cours)
+        2
+    
+        >>> valeur_racine(arbre_feuille)
+        1
+        
+        assert not est_vide(arbre), "l'arbre ne doit pas être vide"
+        return arbre[0]
 
     def SAG(self):
         '''
@@ -79,9 +84,14 @@ class Arbre:
         
         TESTS :
         '''
-        # Vérification de la précondition (voir énoncé : remarques importantes sur le travail)
-        assert ..., " " # A compléter
-        # Code de la fonction à compléter
+        >>> SAG(arbre_du_cours)
+        [8, [6, [], []], [9, [], []]]
+        
+        >>> SAG(arbre_feuille)
+        None
+        
+        assert not est_vide(arbre[1]), "le sous arbre gauche ne doit pas être vide" 
+        return arbre[1]
     
     def SAD(self):
         '''
@@ -92,9 +102,13 @@ class Arbre:
         
         TESTS :
         '''
-        # Vérification de la précondition (voir énoncé : remarques importantes sur le travail)
-        assert ..., " " # A compléter
-        # Code de la fonction à compléter
+        >>> SAD(arbre_du_cours)
+        [1, [7, [], []], []]
+        >>> SAD(arbre_feuille)
+        None
+        
+        assert not est_vide(arbre[2]), "le sous-arbre droit ne doit pas être vide"
+        return arbre[2]
     
     def taille(self):
         '''
@@ -104,7 +118,17 @@ class Arbre:
         
         TESTS :
         '''
-        #A compléter
+        >>> taille(arbre_du_cours)
+        6
+        >>> taille(arbre_feuille)
+        1
+        >>> taille(arbre_vide)
+        0
+        
+        if noeud == None:
+            return 0
+        else:
+            return 1 + taille(self.racine.SAG) + taille(self.racine.SAD)
 
     def hauteur(self):
         '''
@@ -115,7 +139,17 @@ class Arbre:
         
         TESTS :
         '''
-        #A compléter
+        >>> hauteur(arbre_du_cours)
+        2
+        >>> hauteur(arbre_feuille)
+        None
+        >>> hauteur(arbre_vide)
+        None
+        
+        if noeud == None:
+            return -1
+        else:
+            return 1 + hauteur(self.racine.SAG) + hauteur(self.racine.SAD)
 
     def est_egal(self, arbre):
         '''
