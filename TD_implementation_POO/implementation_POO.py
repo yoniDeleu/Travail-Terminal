@@ -65,15 +65,13 @@ class Arbre:
         précondition : A compléter
         
         TESTS :
-        '''
-        >>> valeur_racine(arbre_du_cours)
+        >>> arbre_du_cours.valeur_racine()
         2
-    
-        >>> valeur_racine(arbre_feuille)
+        >>> arbre_feuille.valeur_racine()
         1
-        
-        assert not est_vide(arbre), "l'arbre ne doit pas être vide"
-        return arbre[0]
+        '''
+        assert not self.est_vide(), "l'arbre ne doit pas être vide"
+        return self.racine.valeur
 
     def SAG(self):
         '''
@@ -83,15 +81,14 @@ class Arbre:
         précondition : A compléter
         
         TESTS :
+        >>> affiche(arbre_du_cours.SAG())
+        (8, 6, 9)
+        
+        >>> affiche(arbre_feuille.SAG())
+        ( ) 
         '''
-        >>> SAG(arbre_du_cours)
-        [8, [6, [], []], [9, [], []]]
-        
-        >>> SAG(arbre_feuille)
-        None
-        
-        assert not est_vide(arbre[1]), "le sous arbre gauche ne doit pas être vide" 
-        return arbre[1]
+        assert not self.est_vide(), "le sous arbre gauche ne doit pas être vide" 
+        return Arbre(self.racine.gauche)
     
     def SAD(self):
         '''
@@ -101,14 +98,13 @@ class Arbre:
         précondition : A compléter
         
         TESTS :
+        >>> affiche(arbre_du_cours.SAD())
+        (1, 7)
+        >>> affiche(arbre_feuille.SAD())
+        ( )
         '''
-        >>> SAD(arbre_du_cours)
-        [1, [7, [], []], []]
-        >>> SAD(arbre_feuille)
-        None
-        
-        assert not est_vide(arbre[2]), "le sous-arbre droit ne doit pas être vide"
-        return arbre[2]
+        assert not self.est_vide(), "le sous-arbre droit ne doit pas être vide"
+        return Arbre(self.racine.droit)
     
     def taille(self):
         '''
@@ -117,18 +113,17 @@ class Arbre:
         return (int) : Taille de l'arbre
         
         TESTS :
-        '''
-        >>> taille(arbre_du_cours)
+        >>> arbre_du_cours.taille()
         6
-        >>> taille(arbre_feuille)
+        >>> arbre_feuille.taille()
         1
-        >>> taille(arbre_vide)
+        >>> arbre_vide.taille()
         0
+        '''
         
-        if noeud == None:
+        if self.est_vide():
             return 0
-        else:
-            return 1 + taille(self.racine.SAG) + taille(self.racine.SAD)
+        return 1+ Arbre(self.racine).SAG().taille() + Arbre(self.racine).SAD().taille()
 
     def hauteur(self):
         '''
@@ -138,18 +133,14 @@ class Arbre:
         return (int) : Hauteur de l'arbre
         
         TESTS :
-        '''
-        >>> hauteur(arbre_du_cours)
+        >>> arbre_du_cours.hauteur()
         2
-        >>> hauteur(arbre_feuille)
-        None
-        >>> hauteur(arbre_vide)
-        None
+        >>> arbre_feuille.hauteur()
+        0
+        >>> arbre_vide.hauteur()
+        -1
+        '''
         
-        if noeud == None:
-            return -1
-        else:
-            return 1 + hauteur(self.racine.SAG) + hauteur(self.racine.SAD)
 
     def est_egal(self, arbre):
         '''
